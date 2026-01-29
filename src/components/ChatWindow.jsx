@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { X, Send } from 'lucide-react'
 import { useChatbot } from '../hooks/useChatbot'
 
-function ChatWindow({ onClose, onMinimize, position, setPosition }) {
+function ChatWindow({ onClose, onMinimize, position, setPosition, isMinimized }) {
     const [inputValue, setInputValue] = useState('')
     const { messages, sendMessage, isTyping, displayedText } = useChatbot()
     const chatAreaRef = useRef(null)
@@ -58,9 +58,13 @@ function ChatWindow({ onClose, onMinimize, position, setPosition }) {
         }
     }
 
+    if (isMinimized) {
+        return null
+    }
+
     return (
         <div
-            className="win95-window absolute flex flex-col"
+            className="win95-window absolute flex flex-col window-open"
             style={{
                 left: `${position.x}px`,
                 top: `${position.y}px`,
