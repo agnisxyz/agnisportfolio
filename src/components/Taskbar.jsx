@@ -64,7 +64,7 @@ function Taskbar({ isWindowOpen, isWindowMinimized, onWindowClick, onStartClick,
                             }`}
                     >
                         <Monitor size={16} />
-                        <span className="text-base truncate">Fatih - Chat</span>
+                        <span className="text-base truncate">Agnis - Chat</span>
                     </button>
                 )}
             </div>

@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 
 const tips = [
-    "💡 Hi! I'm Clippy! Click on Fatih.exe to explore the CV!",
-    "🎮 Fatih is a game developer! Type 'games' to learn more.",
+    "💡 Hi! I'm Clippy! Click on Agnis.exe to explore the CV!",
+    "🎮 Agnis is a game developer! Type 'games' to learn more.",
     "📧 Need contact info? Type 'contact' in the chat!",
     "🛠️ Curious about skills? Type 'skills' in the chat!",
     "🎯 Want to see projects? Type 'projects'!",

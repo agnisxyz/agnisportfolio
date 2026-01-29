@@ -77,7 +77,7 @@ function ChatWindow({ onClose, onMinimize, position, setPosition, isMinimized })
             {/* Title Bar */}
             <div className="title-bar-gradient title-bar-draggable h-[26px] flex items-center justify-between px-2 cursor-move select-none">
                 <div className="flex items-center gap-2">
-                    <span className="text-white text-lg font-bold truncate">💬 Fatih - AI Chat</span>
+                    <span className="text-white text-lg font-bold truncate">💬 Agnis - AI Chat</span>
                 </div>
                 <div className="flex items-center gap-[3px]">
                     {/* Minimize Button */}
@@ -124,7 +124,7 @@ function ChatWindow({ onClose, onMinimize, position, setPosition, isMinimized })
                                 style={{ wordBreak: 'break-word' }}
                             >
                                 <span className="font-bold text-sm block mb-2">
-                                    {msg.type === 'user' ? '> You:' : '> Fatih.exe:'}
+                                    {msg.type === 'user' ? '> You:' : '> Agnis.exe:'}
                                 </span>
                                 <span className="whitespace-pre-wrap leading-relaxed">{msg.text}</span>
                             </span>
@@ -137,7 +137,7 @@ function ChatWindow({ onClose, onMinimize, position, setPosition, isMinimized })
                                 className="inline-block p-3 bg-[#c0c0c0] border-2 border-[#808080]"
                                 style={{ minWidth: '300px', minHeight: '80px' }}
                             >
-                                <span className="font-bold text-sm block mb-2">&gt; Fatih.exe:</span>
+                                <span className="font-bold text-sm block mb-2">&gt; Agnis.exe:</span>
                                 <span className="whitespace-pre-wrap leading-relaxed">{displayedText}</span>
                                 <span className="cursor-blink text-xl">▌</span>
                             </span>

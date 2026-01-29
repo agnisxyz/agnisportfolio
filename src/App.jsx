@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Desktop from './components/Desktop'
 import Taskbar from './components/Taskbar'
 import ChatWindow from './components/ChatWindow'
+import ProjectsWindow from './components/ProjectsWindow'
 import ErrorPopup from './components/ErrorPopup'
 import StartMenu from './components/StartMenu'
 
@@ -10,6 +11,9 @@ function App() {
     const [isWindowOpen, setIsWindowOpen] = useState(false)
     const [isWindowMinimized, setIsWindowMinimized] = useState(false)
     const [windowPosition, setWindowPosition] = useState({ x: 0, y: 0 })
+    const [isProjectsWindowOpen, setIsProjectsWindowOpen] = useState(false)
+    const [isProjectsWindowMinimized, setIsProjectsWindowMinimized] = useState(false)
+    const [projectsWindowPosition, setProjectsWindowPosition] = useState({ x: 50, y: 50 })
     const [showError, setShowError] = useState(false)
     const [errorMessage, setErrorMessage] = useState('')
     const [showStartMenu, setShowStartMenu] = useState(false)
@@ -93,6 +97,26 @@ function App() {
         showErrorPopup("💾 System Information:\n\n• CPU: Pentium 166 MHz\n• RAM: 32 MB\n• HDD: 2.1 GB\n• OS: Windows 95 OSR2")
     }
 
+    const openProjectsWindow = () => {
+        setProjectsWindowPosition({ x: 50, y: 50 })
+        setIsProjectsWindowOpen(true)
+        setIsProjectsWindowMinimized(false)
+        setShowStartMenu(false)
+    }
+
+    const closeProjectsWindow = () => {
+        setIsProjectsWindowOpen(false)
+        setIsProjectsWindowMinimized(false)
+    }
+
+    const minimizeProjectsWindow = () => {
+        setIsProjectsWindowMinimized(true)
+    }
+
+    const restoreProjectsWindow = () => {
+        setIsProjectsWindowMinimized(false)
+    }
+
     const handleShutdown = () => {
         setShowStartMenu(false)
         setIsWindowOpen(false)
@@ -129,7 +153,7 @@ function App() {
                         Thanks for visiting
                     </div>
                     <div className="text-[#888] text-sm mb-10">
-                        — fatihgur
+                        — Agnis
                     </div>
 
                     {/* Simple restart link */}
@@ -166,7 +190,7 @@ function App() {
                     </div>
 
                     <div className="text-[#808080] text-xs mt-4">
-                        Made By fatihgur
+                        Made By Agnis
                     </div>
                 </div>
             </div>
@@ -199,6 +223,7 @@ function App() {
                     onIconClick={openWindow}
                     onRecycleBinClick={handleRecycleBin}
                     onMyComputerClick={handleMyComputer}
+                    onProjectsClick={openProjectsWindow}
                 />
 
                 {isWindowOpen && (
@@ -208,6 +233,16 @@ function App() {
                         position={windowPosition}
                         setPosition={setWindowPosition}
                         isMinimized={isWindowMinimized}
+                    />
+                )}
+
+                {isProjectsWindowOpen && (
+                    <ProjectsWindow
+                        onClose={closeProjectsWindow}
+                        onMinimize={minimizeProjectsWindow}
+                        position={projectsWindowPosition}
+                        setPosition={setProjectsWindowPosition}
+                        isMinimized={isProjectsWindowMinimized}
                     />
                 )}
 
